@@ -6,7 +6,7 @@ const Plan = lazy(() => import('./components/Plan'));
 const Router = () => {
   return (
     <Routes>
-      <Route path='/plan' element={<Plan />} />
+      <Route path='/' element={<Plan />} />
     </Routes>
   );
 };

@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { Box, Typography } from '@mui/material';
-import Hero from './Hero';
+
+import Hero from '../../../component/Hero';
+import { HomePageHero } from '../../../constants';
 
 const HomePage = () => {
   return (
     <Box>
-      <Hero />
+      <Hero content={HomePageHero} />
       <Typography>Test</Typography>
       <Typography>Test</Typography>
       <Typography>Test</Typography>

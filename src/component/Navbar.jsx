@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Grid, Button, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material';
@@ -20,8 +20,20 @@ const Navbar = React.memo(() => {
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
+
   const navbarStyles = {
-    px: { xs: '2.4rem', sm: '4rem', md: '6.2rem' },
+    px: { xs: '2.4rem', sm: '4rem', md: '8.2rem', lg: '6.2rem' },
     pt: { xs: '1.6rem', sm: '2.4rem', lg: '4.4rem' },
     pb: { xs: '2.4rem', sm: '4rem', lg: '4.4rem' },
     position: 'relative',
@@ -67,13 +79,14 @@ const Navbar = React.memo(() => {
           <Box
             sx={{
               width: '100%',
-              height: '80vh',
-              backgroundImage: `linear-gradient(${theme?.palette?.background?.default} 35%,rgba(254, 252, 247, 0.56))`,
+              height: '90vh',
+              backgroundImage: `linear-gradient(${theme?.palette?.background?.default} 40%,rgba(254, 252, 247, 0.56))`,
               position: 'absolute',
               top: '7rem',
               left: '0',
               opacity: isMenuOpen ? '100%' : '0',
               transition: 'all 0.3s ease',
+              zIndex: '100',
             }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '4rem', py: '5rem', alignItems: 'center' }}>
               {NavbarLinks.map((link, idx) => (

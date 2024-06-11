@@ -44,6 +44,7 @@ const Theme = ({ children }) => {
           h2: {
             fontFamily: 'Fraunces, serif',
             fontSize: '3.2rem',
+            lineHeight: '1',
             color: colors.text.secondary,
           },
           h3: {
@@ -119,7 +120,6 @@ const Theme = ({ children }) => {
                   fontWeight: '600',
                   letterSpacing: '0.8px',
                   padding: 0,
-
                   fontSize: '1.2rem',
                   fontFamily: 'Barlow, sans-serif',
                   textTransform: 'none',

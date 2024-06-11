@@ -6,7 +6,7 @@ const AboutUs = lazy(() => import('./components/AboutUs'));
 const Router = () => {
   return (
     <Routes>
-      <Route path='/about' element={<AboutUs />} />
+      <Route path='/' element={<AboutUs />} />
     </Routes>
   );
 };
