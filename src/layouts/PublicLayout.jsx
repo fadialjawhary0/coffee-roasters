@@ -9,21 +9,9 @@ const PublicLayout = () => {
   const theme = useTheme();
 
   const AppBarWrapper = ({ Component, routerName }) => (
-    <Box
-      sx={{
-        display: 'flex',
-        gap: 5,
-        px: { xs: '2.4rem', sm: '4rem', md: '6rem' },
-      }}>
-      <Box sx={{ flexGrow: 1, overflowX: 'auto' }}>
-        <Box
-          sx={{
-            minHeight: theme.spacing(65),
-            display: 'flex',
-            flexDirection: 'column',
-          }}>
-          <Component />
-        </Box>
+    <Box sx={{ px: { xs: '2.4rem', sm: '4rem', md: '6rem' } }}>
+      <Box sx={{ minHeight: theme.spacing(65), display: 'flex', flexDirection: 'column' }}>
+        <Component />
       </Box>
     </Box>
   );

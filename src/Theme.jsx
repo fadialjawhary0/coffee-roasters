@@ -38,6 +38,7 @@ const Theme = ({ children }) => {
           h1: {
             fontFamily: 'Fraunces, serif',
             fontSize: '4.8rem',
+            lineHeight: '1',
             color: colors?.text?.primary,
           },
           h2: {
@@ -89,6 +90,7 @@ const Theme = ({ children }) => {
             fontFamily: 'Fraunces, serif',
             padding: '1.6rem 3.2rem',
             backgroundColor: '#0E8784',
+            color: 'red',
             // '&:hover': {
             //   backgroundColor: '#0E8784',
             // },
@@ -111,9 +113,9 @@ const Theme = ({ children }) => {
             variants: [
               {
                 props: { variant: 'navbar' },
-                style: ({ theme }) => ({
+                style: {
                   backgroundColor: 'inherit',
-                  color: theme.palette.secondary.main,
+                  color: colors.secondary.main,
                   fontWeight: '600',
                   letterSpacing: '0.8px',
                   padding: 0,
@@ -135,13 +137,26 @@ const Theme = ({ children }) => {
                     left: 0,
                     width: 0,
                     height: '2px',
-                    backgroundColor: theme.palette.text.secondary,
+                    backgroundColor: colors.text.secondary,
                     transition: 'width 0.3s ease',
                   },
                   '&:hover::after': {
                     width: '100%',
                   },
-                }),
+                },
+              },
+              {
+                props: { variant: 'plan' },
+                style: {
+                  backgroundColor: colors?.primary?.main,
+                  color: colors?.text?.primary,
+                  padding: '1.2rem 3.2rem',
+                  borderRadius: '0.8rem',
+                  fontSize: '1.8rem',
+                  '&:hover': {
+                    backgroundColor: '#66D2CF',
+                  },
+                },
               },
             ],
           },

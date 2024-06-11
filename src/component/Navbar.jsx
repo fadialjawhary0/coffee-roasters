@@ -22,8 +22,8 @@ const Navbar = React.memo(() => {
 
   const navbarStyles = {
     px: { xs: '2.4rem', sm: '4rem', md: '6.2rem' },
-    pt: { xs: '1.6rem', sm: '2.4rem', xl: '4.4rem' },
-    pb: { xs: '2.4rem', sm: '4rem', xl: '4.4rem' },
+    pt: { xs: '1.6rem', sm: '2.4rem', lg: '4.4rem' },
+    pb: { xs: '2.4rem', sm: '4rem', lg: '4.4rem' },
     position: 'relative',
   };
 
@@ -60,12 +60,7 @@ const Navbar = React.memo(() => {
               component='img'
               src={CloseMenu}
               alt='Close'
-              sx={{
-                py: '1.6rem',
-                pl: '1.6rem',
-                opacity: isMenuOpen ? '100%' : '0',
-                transition: 'opacity 0.3s ease',
-              }}
+              sx={{ py: '1.6rem', pl: '1.6rem', opacity: isMenuOpen ? '100%' : '0', transition: 'opacity 0.3s ease' }}
               onClick={onMenuClick}
             />
           </Box>
