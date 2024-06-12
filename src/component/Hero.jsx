@@ -3,10 +3,6 @@ import React from 'react';
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-// import HeroImg_Desktop from '../assets/home/desktop/image-hero-coffeepress.jpg';
-// import HeroImg_Tablet from '../assets/home/tablet/image-hero-coffeepress.jpg';
-// import HeroImg_Mobile from '../assets/home/mobile/image-hero-coffeepress.jpg';
-
 const Hero = ({ content }) => {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
