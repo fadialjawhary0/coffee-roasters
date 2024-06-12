@@ -11,7 +11,8 @@ const Collections = () => {
       justifyContent='center'
       sx={{
         position: 'relative',
-        py: { xs: '17rem', sm: '19rem' },
+        py: { xs: '17rem', sm: '19.5rem' },
+        pb: { xs: '10rem' },
         gap: { xs: '4rem', sm: '3rem' },
       }}>
       <Box
@@ -55,9 +56,7 @@ const Collections = () => {
               textAlign: 'center',
             }}>
             <Typography variant='h4'>{item?.title}</Typography>
-            <Typography variant='body2' sx={{ lineHeight: '1.6' }}>
-              {item?.body}
-            </Typography>
+            <Typography variant='body2'>{item?.body}</Typography>
           </Box>
         </Grid>
       ))}

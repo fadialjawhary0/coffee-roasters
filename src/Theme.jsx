@@ -11,10 +11,12 @@ const Theme = ({ children }) => {
     },
     background: {
       default: '#FEFCF7',
+      secondary: '#2C343E',
     },
     text: {
       primary: '#FEFCF7',
       secondary: '#2C343E',
+      tertiary: '#FDD6BA',
     },
   };
 
@@ -75,6 +77,7 @@ const Theme = ({ children }) => {
           body2: {
             fontFamily: 'Barlow, sans-serif',
             fontSize: '1.6rem',
+            lineHeight: '1.6',
             color: colors.text.secondary,
           },
           subtitle1: {
