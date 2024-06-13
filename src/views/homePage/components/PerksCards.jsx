@@ -15,7 +15,7 @@ const PerksCards = () => {
     left: '50%',
     top: { xs: '34%', sm: '47.5%', md: '70%' },
     transform: 'translateX(-50%)',
-    maxWidth: '132rem',
+    maxWidth: '120rem',
   };
 
   const itemStyles = {
