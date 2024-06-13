@@ -127,9 +127,10 @@ const Theme = ({ children }) => {
                   fontFamily: 'Barlow, sans-serif',
                   textTransform: 'none',
                   borderRadius: 0,
+                  minWidth: 0,
 
                   '&:hover': {
-                    backgroundColor: 'none',
+                    backgroundColor: 'transparent',
                     color: '#000000',
                   },
                   position: 'relative',
@@ -158,6 +159,25 @@ const Theme = ({ children }) => {
                   fontSize: '1.8rem',
                   '&:hover': {
                     backgroundColor: '#66D2CF',
+                  },
+                },
+              },
+              {
+                props: { variant: 'footer' },
+                style: {
+                  backgroundColor: 'inherit',
+                  color: colors.secondary.main,
+                  fontWeight: '600',
+                  letterSpacing: '0.8px',
+                  padding: 0,
+                  fontSize: '1.2rem',
+                  fontFamily: 'Barlow, sans-serif',
+                  textTransform: 'uppercase',
+                  minWidth: 0,
+
+                  '&:hover': {
+                    backgroundColor: 'transparent',
+                    color: '#ffffff',
                   },
                 },
               },

@@ -25,7 +25,6 @@ const Layout = () => {
           </Box>
         }>
         <PublicLayout />
-        <Footer />
       </Suspense>
     </Box>
   );

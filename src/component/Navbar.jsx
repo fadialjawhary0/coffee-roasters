@@ -111,7 +111,7 @@ const Navbar = React.memo(() => {
         </Grid>
       ) : (
         <Grid item>
-          <Box sx={{ display: 'flex', pt: '0.5rem', gap: '3rem' }}>
+          <Box sx={{ display: 'flex', pt: '0.5rem', gap: '3.5rem' }}>
             {NavbarLinks.map((link, idx) => (
               <Button
                 disableRipple

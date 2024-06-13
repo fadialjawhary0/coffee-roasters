@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Box, useTheme } from '@mui/material';
 
 import { PublicRouter } from '../routers';
+import Footer from '../component/Footer';
 
 const PublicLayout = () => {
   const theme = useTheme();
@@ -13,6 +14,7 @@ const PublicLayout = () => {
       <Box sx={{ minHeight: theme.spacing(65), display: 'flex', flexDirection: 'column' }}>
         <Component />
       </Box>
+      <Footer />
     </Box>
   );
   return (

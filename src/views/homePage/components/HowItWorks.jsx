@@ -15,6 +15,7 @@ const HowItWorks = () => {
         alignItems: { xs: 'center', sm: 'flex-start' },
         px: { md: '5.5rem', lg: '8.5rem' },
         pt: { xs: '12rem', sm: '15rem', lg: '18rem' },
+        mb: '12rem',
       }}>
       <Typography
         variant='h4'
