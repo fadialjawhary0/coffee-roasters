@@ -5,3 +5,4 @@ export * from './perksContent.const';
 export * from './processSteps.const';
 export * from './footerLinks.const';
 export * from './sectionsStyles.const';
+export * from './headquartersDetails.const';
