@@ -3,6 +3,28 @@ import React from 'react';
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+/**
+ * Hero Component
+ *
+ * This component is used as a shared Hero section across multiple pages.
+ * It displays a background image with content on top of it. Each page can
+ * override the default styles using the provided props.
+ *
+ * @param {object} content - Contains the data to be displayed on the Hero section.
+ *                          - mobileImg: Image URL for mobile view.
+ *                          - tabletImg: Image URL for tablet view.
+ *                          - desktopImg: Image URL for desktop view.
+ *                          - other content properties like text, buttons, etc.
+ *
+ * @param {object} mainStylesOverride - Custom styles to override the default styles
+ *                                      of the main container. Useful for adjusting
+ *                                      layout and spacing specific to each page.
+ *
+ * @param {object} imgStylesOverride - Custom styles to override the default styles
+ *                                     of the image. Useful for adjusting image-specific
+ *                                     styles such as size, positioning, etc.
+ */
+
 const Hero = ({ content, mainStylesOverride, imgStylesOverride }) => {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
