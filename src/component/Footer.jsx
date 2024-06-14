@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Box, Button, Grid, useTheme } from '@mui/material';
 
@@ -35,7 +36,13 @@ const Footer = () => {
         }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: '3.2rem' }}>
           {NavbarLinks.map((link, index) => (
-            <Button variant='footer' key={index} to={link?.path} sx={{ textTransform: 'upper' }}>
+            <Button
+              disableRipple
+              variant='footer'
+              key={index}
+              component={Link}
+              to={link?.path}
+              sx={{ textTransform: 'upper' }}>
               {link?.name}
             </Button>
           ))}

@@ -11,15 +11,15 @@ const Collections = () => {
       justifyContent='center'
       sx={{
         position: 'relative',
-        py: { xs: '17rem', sm: '19.5rem' },
-        pb: { xs: '10rem' },
+        pb: { xs: '10rem', sm: '19.5rem' },
+        pt: { xs: '8rem', sm: 0 },
         gap: { xs: '4rem', sm: '3rem' },
       }}>
       <Box
         sx={{
           position: 'absolute',
           zIndex: '-1',
-          top: { xs: '10rem', sm: '7.5rem' },
+          top: { xs: 0, sm: '-7rem', lg: '-12rem' },
           '&::before': {
             content: '""',
             position: 'absolute',

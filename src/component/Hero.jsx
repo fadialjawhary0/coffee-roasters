@@ -3,13 +3,13 @@ import React from 'react';
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Hero = ({ content }) => {
+const Hero = ({ content, mainStylesOverride, imgStylesOverride }) => {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ position: 'relative', height: { xs: '49.5rem', md: '52rem' } }}>
+    <Box sx={{ position: 'relative', height: { xs: '49.5rem', md: '52rem' }, ...mainStylesOverride }}>
       <Box
         component='img'
         src={isTablet ? (isMobile ? content?.mobileImg : content?.tabletImg) : content?.desktopImg}
@@ -20,6 +20,7 @@ const Hero = ({ content }) => {
           objectFit: 'cover',
           objectPosition: 'top',
           borderRadius: '1rem',
+          ...imgStylesOverride,
         }}
       />
       <Box

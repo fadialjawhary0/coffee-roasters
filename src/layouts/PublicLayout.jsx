@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Box, useTheme } from '@mui/material';
@@ -9,14 +9,21 @@ import Footer from '../component/Footer';
 const PublicLayout = () => {
   const theme = useTheme();
 
-  const AppBarWrapper = ({ Component, routerName }) => (
-    <Box sx={{ px: { xs: '2.4rem', sm: '4rem', md: '8rem', lg: '6rem' } }}>
-      <Box sx={{ minHeight: theme.spacing(65), display: 'flex', flexDirection: 'column' }}>
-        <Component />
+  const AppBarWrapper = ({ Component, routerName }) => {
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [routerName]);
+
+    return (
+      <Box sx={{ px: { xs: '2.4rem', sm: '4rem', md: '8rem', lg: '6rem' } }}>
+        <Box sx={{ minHeight: theme.spacing(65), display: 'flex', flexDirection: 'column' }}>
+          <Component />
+        </Box>
+        <Footer />
       </Box>
-      <Footer />
-    </Box>
-  );
+    );
+  };
+
   return (
     <Routes>
       {PublicRouter?.map((router, index) => (

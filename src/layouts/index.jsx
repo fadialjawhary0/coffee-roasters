@@ -4,7 +4,6 @@ import { Box, CircularProgress } from '@mui/material';
 
 import PublicLayout from './PublicLayout';
 import Navbar from '../component/Navbar';
-import Footer from '../component/Footer';
 
 const Layout = () => {
   return (

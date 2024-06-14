@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Box, Typography } from '@mui/material';
-
 import Hero from '../../../component/Hero';
 import { PlanHero } from '../../../constants';
+
+import { Box, Typography } from '@mui/material';
 
 const Plan = () => {
   return (
