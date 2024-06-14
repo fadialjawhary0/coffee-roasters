@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, List, ListItem, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ProcessSteps } from '../../../constants';
+import { ProcessSteps, SectionsStyles } from '../../../constants';
 import { Link } from 'react-router-dom';
 
 const HowItWorks = () => {
@@ -15,7 +15,7 @@ const HowItWorks = () => {
         alignItems: { xs: 'center', sm: 'flex-start' },
         px: { md: '5.5rem', lg: '8.5rem' },
         pt: { xs: '12rem', sm: '15rem', lg: '18rem' },
-        mb: '12rem',
+        ...SectionsStyles,
       }}>
       <Typography
         variant='h4'

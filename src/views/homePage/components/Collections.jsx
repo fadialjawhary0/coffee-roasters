@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Grid, Typography } from '@mui/material';
 
-import { CollectionItems } from '../../../constants';
+import { CollectionItems, SectionsStyles } from '../../../constants';
 
 const Collections = () => {
   return (
@@ -10,8 +10,8 @@ const Collections = () => {
       container
       justifyContent='center'
       sx={{
+        ...SectionsStyles,
         position: 'relative',
-        pb: { xs: '10rem', sm: '19.5rem' },
         pt: { xs: '8rem', sm: 0 },
         gap: { xs: '4rem', sm: '3rem' },
       }}>
