@@ -27,7 +27,7 @@ const Quality = () => {
       width: '100%',
       height: { xs: '48rem', sm: '50rem', md: '50rem' },
       borderRadius: '1rem',
-      backgroundColor: theme?.palette?.background?.secondary,
+      backgroundColor: 'primary.main',
     },
   };
 
@@ -45,17 +45,13 @@ const Quality = () => {
           textAlign: { xs: 'center', md: 'left' },
           overflow: { xs: 'hidden', sm: 'visible' },
         }}>
-        <Typography variant='h2' color={theme?.palette?.text?.primary} sx={{ fontSize: '3.2rem', mb: '3rem' }}>
+        <Typography variant='h2' color={'secondary.main'} sx={{ pb: '3.2rem' }}>
           Uncompromising quality
         </Typography>
-        <Typography
-          variant='body2'
-          color={theme?.palette?.text?.primary}
-          sx={{ width: { xs: '100%', md: '44rem' }, opacity: '0.8' }}>
-          Although we work with growers who pay close attention to all stages of harvest and processing, we employ, on
-          our end, a rigorous quality control program to avoid over-roasting or baking the coffee dry. Every bag of
-          coffee is tagged with a roast date and batch number. Our goal is to roast consistent, user-friendly coffee, so
-          that brewing is easy and enjoyable.
+        <Typography variant='body1' color={'secondary.main'} sx={{ width: { xs: '100%', md: '44rem' }, opacity: '0.8' }}>
+          Although we work with growers who pay close attention to all stages of harvest and processing, we employ, on our end, a rigorous quality control
+          program to avoid over-roasting or baking the coffee dry. Every bag of coffee is tagged with a roast date and batch number. Our goal is to roast
+          consistent, user-friendly coffee, so that brewing is easy and enjoyable.
         </Typography>
       </Box>
       <Box

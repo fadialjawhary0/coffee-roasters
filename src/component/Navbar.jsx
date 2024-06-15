@@ -11,7 +11,7 @@ import { NavbarLinks } from '../constants/navbarLinks.const';
 
 const Navbar = React.memo(() => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -43,12 +43,7 @@ const Navbar = React.memo(() => {
     <Grid container alignItems='center' justifyContent='space-between' sx={{ ...navbarStyles }}>
       <Grid item>
         <Link to='/'>
-          <Box
-            component='img'
-            src={Logo}
-            alt='Coffee Roasters'
-            sx={{ cursor: 'pointer', width: { xs: '16rem', sm: '100%' } }}
-          />
+          <Box component='img' src={Logo} alt='Coffee Roasters' sx={{ cursor: 'pointer', width: { xs: '16rem', sm: '100%' } }} />
         </Link>
       </Grid>
 
@@ -80,7 +75,7 @@ const Navbar = React.memo(() => {
             sx={{
               width: '100%',
               height: '90vh',
-              backgroundImage: `linear-gradient(${theme?.palette?.background?.default} 40%,rgba(254, 252, 247, 0.56))`,
+              backgroundImage: 'linear-gradient(#FEFCF7 40%,rgba(254, 252, 247, 0.56))',
               position: 'absolute',
               top: '7rem',
               left: '0',
@@ -97,7 +92,6 @@ const Navbar = React.memo(() => {
                   to={link?.path}
                   onClick={() => setIsMenuOpen(false)}
                   sx={{
-                    color: theme?.palette?.text?.secondary,
                     backgroundColor: 'transparent',
                     padding: 0,
                     width: 'fit-content',
@@ -113,14 +107,10 @@ const Navbar = React.memo(() => {
         <Grid item>
           <Box sx={{ display: 'flex', pt: '0.5rem', gap: '3.5rem' }}>
             {NavbarLinks.map((link, idx) => (
-              <Button
-                disableRipple
-                key={idx}
-                variant='navbar'
-                component={Link}
-                to={link?.path}
-                sx={{ textTransform: 'uppercase' }}>
-                {link?.name}
+              <Button disableRipple key={idx} variant='navbar' component={Link} to={link?.path} sx={{ textTransform: 'uppercase' }}>
+                <Typography variant='subtitle1' sx={{ color: 'grey.main' }}>
+                  {link?.name}
+                </Typography>
               </Button>
             ))}
           </Box>

@@ -60,26 +60,19 @@ const Hero = ({ content, mainStylesOverride, imgStylesOverride }) => {
           textAlign: { xs: 'center', sm: 'left' },
         }}>
         <Typography
-          variant={isMobile ? 'h2' : 'h1'}
-          color={theme.palette.text.primary}
+          variant='h1'
+          color='secondary.main'
           sx={{
             marginBottom: { xs: '2.5rem' },
             width: { xs: '100%', sm: 'auto' },
             maxWidth: { xs: '36rem', sm: '40rem', md: '50rem' },
-            fontSize: { xs: '4rem', sm: '4.8rem' },
           }}>
           {content?.title}
         </Typography>
         <Typography
           variant='body1'
-          color={theme.palette.text.primary}
-          sx={{
-            marginBottom: { xs: '4rem' },
-            width: { xs: '100%', sm: '71%', md: '40rem' },
-            maxWidth: { xs: '40rem', sm: 'none' },
-            opacity: '0.8',
-            lineHeight: '1.6',
-          }}>
+          color='secondary.main'
+          sx={{ marginBottom: { xs: '4rem' }, width: { xs: '100%', sm: '71%', md: '40rem' }, maxWidth: { xs: '40rem', sm: 'none' }, opacity: '0.8' }}>
           {content?.body}
         </Typography>
         {content?.page === 'HomePage' ? (

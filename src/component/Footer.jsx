@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Box, Button, Grid, useTheme } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 
 import Logo from '../assets/shared/desktop/logo-footer.svg';
 import { FooterLinks, NavbarLinks } from '../constants';
 
 const Footer = () => {
-  const theme = useTheme();
-
   return (
     <Grid
       container
@@ -17,7 +15,7 @@ const Footer = () => {
         alignItems: 'center',
         flexWrap: 'nowrap',
         gap: { xs: '3.2rem', md: '6rem', lg: '10rem' },
-        backgroundColor: theme?.palette?.background?.secondary,
+        backgroundColor: 'primary.main',
         padding: { xs: '5.4rem 0', md: '4.8rem 5.8rem', lg: '4.8rem 10.5rem' },
         mb: { xs: '7rem' },
       }}>
@@ -36,13 +34,7 @@ const Footer = () => {
         }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: '3.2rem' }}>
           {NavbarLinks.map((link, index) => (
-            <Button
-              disableRipple
-              variant='footer'
-              key={index}
-              component={Link}
-              to={link?.path}
-              sx={{ textTransform: 'upper' }}>
+            <Button disableRipple variant='footer' key={index} component={Link} to={link?.path} sx={{ textTransform: 'upper' }}>
               {link?.name}
             </Button>
           ))}

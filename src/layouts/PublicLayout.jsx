@@ -27,11 +27,7 @@ const PublicLayout = () => {
   return (
     <Routes>
       {PublicRouter?.map((router, index) => (
-        <Route
-          key={`${index}-${router.name}`}
-          path={router.path}
-          element={<AppBarWrapper Component={router.component} routerName={router.name} />}
-        />
+        <Route key={`${index}-${router.name}`} path={router.path} element={<AppBarWrapper Component={router.component} routerName={router.name} />} />
       ))}
     </Routes>
   );

@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Theme>
           <CssBaseline />
-          <GlobalStyles styles={{ html: { fontSize: '62.5%' }, scrollBehavior: 'smooth' }} />
+          <GlobalStyles styles={{ html: { fontSize: '62.5%' }, body: { backgroundColor: '#FEFCF7' }, scrollBehavior: 'smooth' }} />
           <AppContainer />
         </Theme>
       </BrowserRouter>

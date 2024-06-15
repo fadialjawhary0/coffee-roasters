@@ -13,14 +13,11 @@ const HowItWorks = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: { xs: 'center', sm: 'flex-start' },
-        px: { md: '5.5rem', lg: '8.5rem' },
-        pt: { xs: '12rem', sm: '15rem', lg: '18rem' },
+        px: { md: '3.5rem', lg: '8.5rem' },
+        pt: { xs: '16rem', sm: '15rem', lg: '18rem' },
         ...SectionsStyles,
       }}>
-      <Typography
-        variant='h4'
-        color={theme?.palette?.secondary?.main}
-        sx={{ pb: { xs: '7rem', sm: '5.6rem', md: '9.6rem' } }}>
+      <Typography variant='h4' color='grey.main' sx={{ pb: { xs: '4rem', sm: '5.6rem', md: '9.6rem' } }}>
         How it works
       </Typography>
 
@@ -42,7 +39,7 @@ const HowItWorks = () => {
               alignItems: { xs: 'center', sm: 'flex-start' },
               maxWidth: { xs: '47rem', sm: '37rem' },
               textAlign: { xs: 'center', sm: 'left' },
-              padding: { xs: '0', sm: '0 1.6rem 0 0', md: '0 9.6rem 0 0' },
+              padding: { xs: '0', sm: '0 1.6rem 0 0', md: '0 3.5rem 0 0', lg: '0 9.6rem 0 0' },
               position: 'relative',
               mb: { xs: '5.6rem', sm: '0' },
             }}>
@@ -55,12 +52,12 @@ const HowItWorks = () => {
                     width: '3.2rem',
                     height: '3.2rem',
                     borderRadius: '50%',
-                    border: `2px solid ${theme?.palette?.primary?.main}`,
+                    border: '2px solid #0E8784',
                     position: 'absolute',
                     top: { sm: '-4rem', md: '-8rem' },
                     left: '1.5rem',
                     transform: 'translate(-50%, -50%)',
-                    backgroundColor: theme?.palette?.background?.default,
+                    backgroundColor: 'secondary.main',
                     zIndex: 1,
                   }}
                 />
@@ -69,7 +66,7 @@ const HowItWorks = () => {
                     sx={{
                       height: '2px',
                       maxWidth: '77rem',
-                      backgroundColor: theme?.palette?.text?.tertiary,
+                      backgroundColor: 'orange.main',
                       width: '100%',
                       position: 'absolute',
                       top: { sm: '-4rem', md: '-8rem' },
@@ -79,7 +76,7 @@ const HowItWorks = () => {
               </React.Fragment>
             )}
 
-            <Typography variant='h1' sx={{ color: theme?.palette?.text?.tertiary, fontSize: '7.2rem' }}>
+            <Typography variant='h1' sx={{ color: 'orange.main' }}>
               {step?.number}
             </Typography>
             <Typography
@@ -91,7 +88,7 @@ const HowItWorks = () => {
               }}>
               {step?.title}
             </Typography>
-            <Typography variant={isMobile ? 'body1' : 'body2'}>{step?.description}</Typography>
+            <Typography variant={isMobile ? 'body2' : 'body1'}>{step?.description}</Typography>
           </ListItem>
         ))}
       </List>

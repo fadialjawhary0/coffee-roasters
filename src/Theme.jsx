@@ -1,110 +1,125 @@
 import { useMemo } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createBreakpoints } from '@mui/system';
+
+const breakpoints = createBreakpoints({});
 
 const Theme = ({ children }) => {
-  const colors = {
-    primary: {
-      main: '#0E8784',
-    },
-    secondary: {
-      main: '#83888F',
-    },
-    background: {
-      default: '#FEFCF7',
-      secondary: '#2C343E',
-    },
-    text: {
-      primary: '#FEFCF7',
-      secondary: '#2C343E',
-      tertiary: '#FDD6BA',
+  const COLORS = {
+    palette: {
+      primary: {
+        DARKBLUE: '#333D4B',
+        CREAM: '#FEFCF7',
+      },
+      secondary: {
+        DARKCYAN: '#0E8784',
+      },
+      orange: {
+        ORANGE: '#FDD6BA',
+      },
+      grey: {
+        GREY: '#83888F',
+      },
     },
   };
 
   const theme = useMemo(
     () =>
       createTheme({
-        breakpoints: {
-          values: {
-            xs: 0,
-            sm: 768,
-            md: 1024,
-            lg: 1280,
-            xl: 1920,
-          },
-        },
         palette: {
-          ...colors,
+          primary: {
+            main: COLORS.palette.primary.DARKBLUE,
+          },
+          secondary: {
+            main: COLORS.palette.primary.CREAM,
+          },
+          darkcyan: {
+            main: COLORS.palette.secondary.DARKCYAN,
+          },
+          orange: {
+            main: COLORS.palette.orange.ORANGE,
+          },
+          grey: {
+            main: COLORS.palette.grey.GREY,
+          },
         },
         typography: {
-          fontFamily: 'Barlow, sans-serif',
+          fontFamily: 'Fraunces, serif',
+          color: 'COLORS.palette.primary.DARKBLUE',
+          fontSize: 16,
           h1: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '4.8rem',
-            lineHeight: '1',
-            color: colors?.text?.primary,
+            fontSize: 72,
+            lineHeight: '7.2rem',
+            [breakpoints.down('md')]: {
+              fontSize: 48,
+              lineHeight: '4.8rem',
+            },
+            [breakpoints.down('sm')]: {
+              fontSize: '4rem',
+            },
           },
           h2: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '3.2rem',
-            lineHeight: '1',
-            color: colors.text.secondary,
+            fontSize: 40,
+            lineHeight: '4.8rem',
+            [breakpoints.down('md')]: {
+              fontSize: 32,
+            },
+            [breakpoints.down('sm')]: {
+              fontSize: 28,
+              lineHeight: '2.8rem',
+            },
           },
           h3: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '2.8rem',
-            color: colors.text.secondary,
+            fontSize: 32,
+            lineHeight: '3.6rem',
+            [breakpoints.down('md')]: {
+              fontSize: 28,
+              lineHeight: '3.2rem',
+            },
           },
           h4: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '2.4rem',
-            color: colors?.text?.secondary,
+            fontSize: 24,
+            lineHeight: '3.2rem',
           },
           h5: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '2rem',
-            color: colors.text.secondary,
+            fontSize: 20,
           },
           h6: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '1.8rem',
-            color: colors.text.secondary,
+            fontSize: 18,
           },
           body1: {
             fontFamily: 'Barlow, sans-serif',
-            fontSize: '1.5rem',
-            color: colors.text.secondary,
+            fontSize: 16,
+            lineHeight: '2.6rem',
+            [breakpoints.down('md')]: {
+              fontSize: 15,
+              lineHeight: '2.5rem',
+            },
           },
           body2: {
             fontFamily: 'Barlow, sans-serif',
-            fontSize: '1.6rem',
-            lineHeight: '1.6',
-            color: colors.text.secondary,
+            fontSize: 14,
+            lineHeight: '2rem',
           },
           subtitle1: {
-            fontFamily: 'Fraunces, serif',
-            fontSize: '1.2rem',
-            color: colors.text.secondary,
+            fontFamily: 'Barlow, sans-serif',
+            fontSize: 12,
+            lineHeight: '1.5rem',
+            letterSpacing: '0.92px',
+            fontWeight: 600,
           },
           subtitle2: {
-            fontFamily: 'Barlow, sans-serif',
-            fontSize: '1.2rem',
-            color: colors.text.secondary,
+            fontSize: 12,
+            lineHeight: '1.5rem',
+            letterSpacing: '0.92px',
           },
-          button: {
-            fontFamily: 'Fraunces, serif',
-            padding: '1.6rem 3.2rem',
-            backgroundColor: '#0E8784',
-            color: 'red',
-            // '&:hover': {
-            //   backgroundColor: '#0E8784',
-            // },
-          },
+          button: {},
         },
         components: {
           MuiTypography: {
             styleOverrides: {
               root: {
-                color: colors?.text?.secondary,
+                color: COLORS.palette.primary.DARKBLUE,
               },
             },
           },
@@ -119,12 +134,9 @@ const Theme = ({ children }) => {
                 props: { variant: 'navbar' },
                 style: {
                   backgroundColor: 'inherit',
-                  color: colors.secondary.main,
+                  color: COLORS.palette.grey.GREY,
                   fontWeight: '600',
-                  letterSpacing: '0.8px',
                   padding: 0,
-                  fontSize: '1.2rem',
-                  fontFamily: 'Barlow, sans-serif',
                   textTransform: 'none',
                   borderRadius: 0,
                   minWidth: 0,
@@ -141,7 +153,7 @@ const Theme = ({ children }) => {
                     left: 0,
                     width: 0,
                     height: '2px',
-                    backgroundColor: colors.text.secondary,
+                    backgroundColor: COLORS.palette.primary.DARKBLUE,
                     transition: 'width 0.3s ease',
                   },
                   '&:hover::after': {
@@ -152,8 +164,8 @@ const Theme = ({ children }) => {
               {
                 props: { variant: 'plan' },
                 style: {
-                  backgroundColor: colors?.primary?.main,
-                  color: colors?.text?.primary,
+                  backgroundColor: COLORS.palette.secondary.DARKCYAN,
+                  color: COLORS.palette.primary.CREAM,
                   padding: '1.2rem 3.2rem',
                   borderRadius: '0.8rem',
                   fontSize: '1.8rem',
@@ -166,7 +178,7 @@ const Theme = ({ children }) => {
                 props: { variant: 'footer' },
                 style: {
                   backgroundColor: 'inherit',
-                  color: colors.secondary.main,
+                  color: COLORS.palette.grey.GREY,
                   fontWeight: '600',
                   letterSpacing: '0.8px',
                   padding: 0,
