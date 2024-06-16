@@ -7,7 +7,6 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
-    "@tabler/icons-react": "^3.5.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,7 +16,6 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
-    "reactjs-popup": "^2.0.6",
     "sass": "^1.77.2",
     "web-vitals": "^2.1.4"
   },
