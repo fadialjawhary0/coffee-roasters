@@ -108,9 +108,7 @@ const Navbar = React.memo(() => {
           <Box sx={{ display: 'flex', pt: '0.5rem', gap: '3.5rem' }}>
             {NavbarLinks.map((link, idx) => (
               <Button disableRipple key={idx} variant='navbar' component={Link} to={link?.path} sx={{ textTransform: 'uppercase' }}>
-                <Typography variant='subtitle1' sx={{ color: 'grey.main' }}>
-                  {link?.name}
-                </Typography>
+                <Typography variant='subtitle1'>{link?.name}</Typography>
               </Button>
             ))}
           </Box>

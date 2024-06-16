@@ -169,7 +169,7 @@ const Theme = ({ children }) => {
                 props: { variant: 'navbar' },
                 style: {
                   backgroundColor: 'inherit',
-                  color: COLORS.palette.grey.GREY,
+                  color: COLORS.palette.grey.GREY500,
                   fontWeight: '600',
                   padding: 0,
                   textTransform: 'none',
@@ -188,7 +188,8 @@ const Theme = ({ children }) => {
                     left: 0,
                     width: 0,
                     height: '2px',
-                    backgroundColor: COLORS.palette.primary.DARKBLUE,
+                    color: 'red',
+                    backgroundColor: COLORS.palette.primary.DARKBLUE500,
                     transition: 'width 0.3s ease',
                   },
                   '&:hover::after': {
