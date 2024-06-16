@@ -3,7 +3,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 import Hero from '../../../component/Hero';
-import { AboutUsHero, SectionsStyles } from '../../../constants';
+import { AboutUsHero } from '../../../constants';
 import Commitment from './Commitment';
 import Quality from './Quality';
 import Headquarters from './Headquarters';
@@ -11,7 +11,6 @@ import Headquarters from './Headquarters';
 const AboutUs = () => {
   const mainStylesOverride = {
     height: '45rem',
-    ...SectionsStyles,
   };
 
   const imgStylesOverride = {

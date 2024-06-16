@@ -6,3 +6,5 @@ export * from './processSteps.const';
 export * from './footerLinks.const';
 export * from './sectionsStyles.const';
 export * from './headquartersDetails.const';
+export * from './menuItems.const';
+export * from './planQuestions.const';

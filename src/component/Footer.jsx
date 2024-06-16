@@ -34,7 +34,7 @@ const Footer = () => {
         }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: '3.2rem' }}>
           {NavbarLinks.map((link, index) => (
-            <Button disableRipple variant='footer' key={index} component={Link} to={link?.path} sx={{ textTransform: 'upper' }}>
+            <Button disableRipple variant='footer' key={index} component={Link} to={link?.path} sx={{}}>
               {link?.name}
             </Button>
           ))}

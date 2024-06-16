@@ -1,10 +1,14 @@
 import React from 'react';
-import { Box, Button, List, ListItem, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ProcessSteps, SectionsStyles } from '../../../constants';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const HowItWorks = () => {
+import { Box, Button, List, ListItem, Typography, useMediaQuery, useTheme } from '@mui/material';
+
+import { ProcessSteps, SectionsStyles } from '../constants';
+
+const HowItWorks = ({ mainStyles, textStyles, circleStyles }) => {
   const theme = useTheme();
+  const location = useLocation();
+
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
@@ -13,13 +17,14 @@ const HowItWorks = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: { xs: 'center', sm: 'flex-start' },
-        px: { md: '3.5rem', lg: '8.5rem' },
-        pt: { xs: '16rem', sm: '15rem', lg: '18rem' },
         ...SectionsStyles,
+        ...mainStyles,
       }}>
-      <Typography variant='h4' color='grey.main' sx={{ pb: { xs: '4rem', sm: '5.6rem', md: '9.6rem' } }}>
-        How it works
-      </Typography>
+      {location.pathname === '/' && (
+        <Typography variant='h4' color='grey.main' sx={{ pb: { xs: '4rem', sm: '5.6rem', md: '9.6rem' } }}>
+          How it works
+        </Typography>
+      )}
 
       <List
         sx={{
@@ -57,8 +62,8 @@ const HowItWorks = () => {
                     top: { sm: '-4rem', md: '-8rem' },
                     left: '1.5rem',
                     transform: 'translate(-50%, -50%)',
-                    backgroundColor: 'secondary.main',
                     zIndex: 1,
+                    ...circleStyles,
                   }}
                 />
                 {index !== ProcessSteps.length - 1 && (
@@ -81,20 +86,20 @@ const HowItWorks = () => {
             </Typography>
             <Typography
               variant='h3'
-              sx={{
-                mt: { xs: '2.4rem', sm: '3.8rem' },
-                mb: { xs: '2.4rem', sm: '4.2rem' },
-                minHeight: { xs: '0', sm: '7rem' },
-              }}>
+              sx={{ ...textStyles, mt: { xs: '2.4rem', sm: '3.8rem' }, mb: { xs: '2.4rem', sm: '4.2rem' }, minHeight: { xs: '0', sm: '7rem' } }}>
               {step?.title}
             </Typography>
-            <Typography variant={isMobile ? 'body2' : 'body1'}>{step?.description}</Typography>
+            <Typography variant='body1' sx={{ ...textStyles }}>
+              {step?.description}
+            </Typography>
           </ListItem>
         ))}
       </List>
-      <Button variant='plan' component={Link} to='/plan' sx={{ mt: { xs: '2rem', sm: '6rem' } }}>
-        Create your plan
-      </Button>
+      {location.pathname === '/' && (
+        <Button variant='plan' component={Link} to='/plan' sx={{ mt: { xs: '2rem', sm: '6rem' } }}>
+          Create your plan
+        </Button>
+      )}
     </Box>
   );
 };

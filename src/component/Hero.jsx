@@ -1,8 +1,9 @@
 import React from 'react';
-
-import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
+
+import { SectionsStyles } from '../constants';
 /**
  * Hero Component
  *
@@ -31,7 +32,7 @@ const Hero = ({ content, mainStylesOverride, imgStylesOverride }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ position: 'relative', height: { xs: '49.5rem', md: '52rem' }, ...mainStylesOverride }}>
+    <Box sx={{ position: 'relative', height: { xs: '49.5rem', md: '52rem' }, ...mainStylesOverride, ...SectionsStyles }}>
       <Box
         component='img'
         src={isTablet ? (isMobile ? content?.mobileImg : content?.tabletImg) : content?.desktopImg}

@@ -2,13 +2,22 @@ import { useMemo } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { createBreakpoints } from '@mui/system';
 
-const breakpoints = createBreakpoints({});
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 0,
+    sm: 648,
+    md: 900,
+    lg: 1280,
+    xl: 1536,
+  },
+});
 
 const Theme = ({ children }) => {
   const COLORS = {
     palette: {
       primary: {
-        DARKBLUE: '#333D4B',
+        DARKBLUE500: '#333D4B',
+        DARKBLUE400: '#2C343E',
         CREAM: '#FEFCF7',
       },
       secondary: {
@@ -18,7 +27,11 @@ const Theme = ({ children }) => {
         ORANGE: '#FDD6BA',
       },
       grey: {
-        GREY: '#83888F',
+        GREY500: '#83888F',
+        GREY400: '#9DA1A8',
+        GREY300: '#B8BBBF',
+        GREY200: '#D3D6D9',
+        GREY100: '#F4F1EB',
       },
     },
   };
@@ -26,9 +39,11 @@ const Theme = ({ children }) => {
   const theme = useMemo(
     () =>
       createTheme({
+        breakpoints,
         palette: {
           primary: {
-            main: COLORS.palette.primary.DARKBLUE,
+            main: COLORS.palette.primary.DARKBLUE500,
+            400: COLORS.palette.primary.DARKBLUE400,
           },
           secondary: {
             main: COLORS.palette.primary.CREAM,
@@ -40,7 +55,11 @@ const Theme = ({ children }) => {
             main: COLORS.palette.orange.ORANGE,
           },
           grey: {
-            main: COLORS.palette.grey.GREY,
+            main: COLORS.palette.grey.GREY500,
+            400: COLORS.palette.grey.GREY400,
+            300: COLORS.palette.grey.GREY300,
+            200: COLORS.palette.grey.GREY200,
+            100: COLORS.palette.grey.GREY100,
           },
         },
         typography: {
@@ -123,6 +142,22 @@ const Theme = ({ children }) => {
               },
             },
           },
+          MuiList: {
+            styleOverrides: {
+              root: {
+                padding: 0,
+                width: 'fit-content',
+              },
+            },
+          },
+          MuiListItem: {
+            styleOverrides: {
+              root: {
+                padding: 0,
+              },
+            },
+          },
+
           MuiButton: {
             styleOverrides: {
               root: {
@@ -149,7 +184,7 @@ const Theme = ({ children }) => {
                   '&::after': {
                     content: '""',
                     position: 'absolute',
-                    bottom: 0,
+                    bottom: '-0.5rem',
                     left: 0,
                     width: 0,
                     height: '2px',
@@ -172,13 +207,16 @@ const Theme = ({ children }) => {
                   '&:hover': {
                     backgroundColor: '#66D2CF',
                   },
+                  '&.Mui-disabled': {
+                    backgroundColor: COLORS.palette.grey.GREY200,
+                    color: COLORS.palette.grey.GREY500,
+                  },
                 },
               },
               {
                 props: { variant: 'footer' },
                 style: {
                   backgroundColor: 'inherit',
-                  color: COLORS.palette.grey.GREY,
                   fontWeight: '600',
                   letterSpacing: '0.8px',
                   padding: 0,
@@ -186,6 +224,7 @@ const Theme = ({ children }) => {
                   fontFamily: 'Barlow, sans-serif',
                   textTransform: 'uppercase',
                   minWidth: 0,
+                  color: COLORS?.palette?.grey?.GREY500,
 
                   '&:hover': {
                     backgroundColor: 'transparent',
