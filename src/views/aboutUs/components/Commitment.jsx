@@ -34,8 +34,10 @@ const Commitment = () => {
         }}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: '3.7rem', textAlign: { xs: 'center', sm: 'left' } }}>
-        <Typography variant='h2'>Our commitment</Typography>
-        <Typography variant={isMobile ? 'body2' : 'body1'}>
+        <Typography variant='h2' sx={{ color: 'primary.main' }}>
+          Our commitment
+        </Typography>
+        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ color: 'primary.main' }}>
           We're built on a simple mission and a commitment to doing good along the way. We want to make it easy for you to discover and brew the world's best
           coffee at home. It all starts at the source. To locate the specific lots we want to purchase, we travel nearly 60 days a year trying to understand the
           challenges and opportunities in each of these places. We collaborate with exceptional coffee growers and empower a global community of farmers through
