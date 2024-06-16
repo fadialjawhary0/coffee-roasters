@@ -15,7 +15,7 @@ const Footer = () => {
         alignItems: 'center',
         flexWrap: 'nowrap',
         gap: { xs: '3.2rem', md: '6rem', lg: '10rem' },
-        backgroundColor: 'primary.main',
+        backgroundColor: 'primary.400',
         padding: { xs: '5.4rem 0', md: '4.8rem 5.8rem', lg: '4.8rem 10.5rem' },
         mb: { xs: '7rem' },
       }}>

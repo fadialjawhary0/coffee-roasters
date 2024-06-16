@@ -10,13 +10,13 @@ import { PlanHero } from '../../../constants';
 
 const Plan = () => {
   const mainStyles = {
-    backgroundColor: 'primary.main',
+    backgroundColor: 'primary.400',
     py: { xs: '3rem', sm: '8rem', lg: '10rem' },
     px: { xs: '2rem', md: '3.5rem', lg: '8.5rem' },
     borderRadius: '1rem',
   };
   const textStyles = { color: 'secondary.main' };
-  const circleStyles = { backgroundColor: 'primary.main' };
+  const circleStyles = { backgroundColor: 'primary.400' };
 
   return (
     <Box>

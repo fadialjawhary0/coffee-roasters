@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
     padding: { xs: '6.4rem 2.4rem 0 2.4rem', sm: '5.8rem 5.6rem', md: '10rem 8.5rem' },
     mb: { xs: '56rem', sm: '30rem', md: '26rem' },
     borderRadius: '1rem',
-    backgroundColor: 'primary.main',
+    backgroundColor: 'primary.400',
     position: 'relative',
   };
 

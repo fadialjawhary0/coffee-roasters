@@ -27,7 +27,7 @@ const Quality = () => {
       width: '100%',
       height: { xs: '48rem', sm: '50rem', md: '50rem' },
       borderRadius: '1rem',
-      backgroundColor: 'primary.main',
+      backgroundColor: 'primary.400',
     },
   };
 

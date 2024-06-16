@@ -52,7 +52,7 @@ const OrderSummary = ({ options, questionsLength }) => {
   return (
     <React.Fragment>
       <Grid container flexDirection='column' sx={{ gap: '4.2rem', alignItems: { xs: 'center', md: 'end' } }}>
-        <Grid item sx={{ backgroundColor: 'primary.400', padding: '2.8rem 6.4rem', borderRadius: '1rem' }}>
+        <Grid item sx={{ backgroundColor: 'primary.400', padding: { xs: '2.8rem 3.2rem', sm: '2.8rem 6.4rem' }, borderRadius: '1rem' }}>
           <Typography variant='body1' sx={{ color: 'grey.main', mb: '2rem', textTransform: 'uppercase' }}>
             Order Summary
           </Typography>
@@ -66,6 +66,8 @@ const OrderSummary = ({ options, questionsLength }) => {
           </Button>
         </Grid>
       </Grid>
+
+      {/* Order Summary Overlay */}
       {orderSubmitted && (
         <Box
           sx={{
