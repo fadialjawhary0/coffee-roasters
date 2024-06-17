@@ -5,7 +5,7 @@ import { HeadquartersDetails, SectionsStyles } from '../../../constants';
 const Headquarters = () => {
   return (
     <Box sx={{ padding: { xs: 0, md: '0 8.5rem' }, ...SectionsStyles }}>
-      <Typography variant='h4' color='grey.main' sx={{ mb: '7.2rem', textAlign: { xs: 'center', sm: 'left' } }}>
+      <Typography variant='h4' color='grey.main' sx={{ mb: { xs: '2.5rem', sm: '7.2rem' }, textAlign: { xs: 'center', sm: 'left' } }}>
         Our headquarters
       </Typography>
       <Grid container spacing={4}>

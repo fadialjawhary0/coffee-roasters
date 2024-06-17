@@ -3,17 +3,20 @@ import React from 'react';
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import CommitmentImg from '../../../assets/about/desktop/image-commitment.jpg';
+import CommitmentImg_Tablet from '../../../assets/about/tablet/image-commitment.jpg';
+import CommitmentImg_Mobile from '../../../assets/about/mobile/image-commitment.jpg';
 
 const Commitment = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const gridItemStyles = {
     display: 'grid',
     gridTemplateColumns: { sm: '1fr 1.21fr' },
     alignItems: { sm: 'start', md: 'center' },
-    gap: { sm: '6rem', md: '12.7rem' },
-    px: { md: '8.5rem' },
+    gap: { sm: '6rem', md: '10rem', lg: '12.7rem' },
+    px: { md: '4.5rem', lg: '8.5rem' },
     mb: { xs: '12rem', md: '14.4rem', lg: '16.8rem' },
     minHeight: { xs: 'auto', sm: '30rem', md: '54rem' },
   };
@@ -22,14 +25,14 @@ const Commitment = () => {
     <Grid item sx={{ ...gridItemStyles }}>
       <Box
         component='img'
-        src={CommitmentImg}
+        src={isMobile ? CommitmentImg_Mobile : isTablet ? CommitmentImg_Tablet : CommitmentImg}
         alt='Commitment'
         sx={{
           borderRadius: '1rem',
           width: '100%',
           height: { xs: '40rem', sm: '100%' },
           objectFit: 'cover',
-          objectPosition: { xs: 'top', sm: 'left' },
+          objectPosition: 'top',
           mb: { xs: '4.8rem', sm: 0 },
         }}
       />
