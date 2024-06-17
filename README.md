@@ -26,7 +26,7 @@ Coffee Roasters is a responsive website built with ReactJS for managing differen
 - Image caching for improved performance
 - Consistent layout with a common padding for components
 - Smooth navigation using React Router
-- Usage of React hooks like `useEffect`, `useRef`, and `useState`
+- Usage of React hooks like `useEffect`, `useRef`, `useState`, and `useMemo`
 
 ## Technologies Used
 
@@ -35,6 +35,7 @@ Coffee Roasters is a responsive website built with ReactJS for managing differen
 - React Router DOM
 - JavaScript (ES6+)
 - CSS for custom styling
+- JSON files for storing data
 
 ## Installation
 
