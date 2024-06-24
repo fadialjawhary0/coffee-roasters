@@ -14,7 +14,7 @@ A Frontend Mentor project to build a responsive Coffee Roasters website using Re
 
 ## Links
 
-- Live Site URL: [https://bmi-calculator-fadi.vercel.app/](https://coffee-roasters-fadi.vercel.app/)
+- Live Site URL: [https://coffee-roasters-fadi.vercel.app/](https://coffee-roasters-fadi.vercel.app/)
 
 ## Overview
 
